@@ -1,6 +1,10 @@
 package br.com.designsPatterns.list;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ArraysClass {
 
@@ -11,10 +15,20 @@ public class ArraysClass {
     public static void getStringsArrayList() {
         strings.add("ordenação garantida conforme inserção");
         strings.add("another string");
+        strings.add("another string");
+        strings.add("another string");
         strings.add("another string in range 2");
         strings.set(2,"another string replaced in range 2 ");
+        for (int i = 0; i < strings.size(); i++){
 
-
+            for (int j = 0; j < strings.size(); j++) {
+                if (strings.get(i).equalsIgnoreCase(strings.get(j))){
+                    if (i != j){
+                        strings.remove(strings.get(j));
+                    }
+                }
+            }
+        }//removendo elementos duplicados na unha
         strings.forEach(System.out::println);
     }
 
