@@ -11,6 +11,8 @@ public class ListPerformanceTest {
 
             for (int i = 1; i <= 100000; i++) {
                 numeros.add(i);
+                Object[] objects = numeros.toArray();
+                int i1 = Arrays.binarySearch(objects, 1);
             }
         long fimAdicao = System.currentTimeMillis();
 
